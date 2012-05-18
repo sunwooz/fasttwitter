@@ -1,3 +1,21 @@
-// Place all the styles related to the microposts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#microposts {
+	width:310px;
+	padding:20px;
+	border-radius:10px;
+	background-color:white;
+}
+.micropostfield {
+	width:340px;
+	height:150px;
+	border-radius:10px;
+}
+#timeago {
+	font-size:20px;
+}
+body {
+	font-family:Helvetica;
+	background-color:#88CBFF;
+}
+p#microcontent {
+	width:240px;
+}
