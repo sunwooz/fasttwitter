@@ -1,0 +1,4 @@
+$('#microposts').prepend('<div class="micropost"><h3>' +  "<%= j @user.email %>" + '</h3><span id="timeago">Posted ' + "<%= j time_ago_in_words(@micropost.created_at) %>" + ' ago</span><p id="microcontent">' +  "<%= j @micropost.content %>" + '</p></div><hr/>');
+$('#new_micropost')[0].reset();
+$('#micropost_count').html('<%= Micropost.count %>');
+

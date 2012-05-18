@@ -1,0 +1,8 @@
+<%= div_for micropost do %>
+	<h3><%= micropost.user.email %></h3>
+	<span id="timeago">Posted <%= time_ago_in_words(micropost.created_at) %> ago</span>
+	<p id="microcontent">
+		<%= micropost.content %>
+	</p>
+	<hr/>
+<% end %>

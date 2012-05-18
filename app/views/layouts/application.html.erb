@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fasttwitter</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "custom", :media => "all" %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
+	        <a class="brand" href="/">Fast Twitter</a>
+	        <div class="nav-collapse">
+	          <ul class="nav">
+		
+				<li><%= link_to "List of Users", users_path %></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
+	<div class="container">
+		<% flash.each do |name, msg| %>
+		  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+	    <div class="row">
+	      <div class="span6"><%= yield %></div>
+	    </div>
+	</div>
+
+
+</body>
+</html>
