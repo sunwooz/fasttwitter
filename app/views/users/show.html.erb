@@ -1,10 +1,11 @@
-<h1><%= @user.email %></h1>
+<h1><%= @user.email %></h1><br/>
+<% if logged_in? %>
 <%= form_for [@user, @micropost], :remote => true do |f| %>
 	<h1>What are you thinking?</h1><br/>
 	<%= f.text_area :content, :class => 'micropostfield' %><br/>
 	<%= f.submit :class => 'btn large'%>
 <% end %>
-
+<% end %>
 <div id="microposts">
 <%= render @user.microposts.reverse %>
 </div>
