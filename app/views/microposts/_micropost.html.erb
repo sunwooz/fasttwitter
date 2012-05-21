@@ -4,5 +4,7 @@
 	<p id="microcontent">
 		<%= micropost.content %>
 	</p>
+	<p>
+		<%= link_to 'delete', user_micropost_path(micropost), :method => :delete %>
 	<hr/>
 <% end %>

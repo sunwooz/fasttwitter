@@ -16,11 +16,11 @@ class MicropostsController < ApplicationController
       if @micropost.save
         format.html { redirect_to(@user) }
         format.xml { render :xml => @user, :status => :created, :location => @user }
-        format.js {}
+        format.js
       else
         format.html { redirect_to(@user) }
         format.xml { render :xml => @micropost.errors }
-        format.js {}
+        format.js
       end
     end
   end
@@ -40,12 +40,9 @@ class MicropostsController < ApplicationController
   
   def destroy
     @user = User.find(params[:id])
-    if current_user == @user
-      @micropost = @user.microposts.find(params[:id])
-      @micropost.destroy
-    else
-      redirect_to @user, :notice => "You cannot destroy another user's post!"
-    end
+    @micropost = Micropost.find(params[:user_id])
+    @micropost.destroy
+    redirect_to @user
   end
   
 end
