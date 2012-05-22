@@ -1,4 +1,4 @@
-<h1><%= @user.email %><div id="micropost_count">(<%= @user.microposts.count %>)</div></h1><br/>
+<h1><%= @user.email %><div id="micropost_count">(<%= @user.microposts.count %> Entries)</div></h1><br/>
 <% if logged_in? %>
 <%= form_for [@user, @micropost], :remote => true do |f| %>
 	<h1>What are you thinking?</h1><br/>
