@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  
+  respond_to :html, :js
   def new
     @micropost = Micropost.new
     @user = User.find(params[:user_id])
@@ -42,7 +42,10 @@ class MicropostsController < ApplicationController
     @user = User.find(params[:id])
     @micropost = Micropost.find(params[:user_id])
     @micropost.destroy
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to(@user) }  
+      format.js { render :nothing => true }
+    end
   end
   
 end
