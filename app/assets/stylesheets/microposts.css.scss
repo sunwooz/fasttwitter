@@ -19,3 +19,20 @@ body {
 p#microcontent {
 	width:240px;
 }
+#micropost_container {
+	float:left;
+}
+#user_info {
+	background-color:white;
+	margin-left:400px;
+	border-radius:10px;
+	width:300px;
+	padding:20px;
+	border:solid black 1px;
+}
+.micro_hover {
+	background-color:#f33;
+}
+.micropost {
+	display:block;
+}

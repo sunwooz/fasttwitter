@@ -1,0 +1,5 @@
+$(document).ready(function() {
+	$('.delete_micropost').bind('ajax:success', function() {
+		$(this).closest('div').slideUp();
+	});
+});

@@ -44,7 +44,7 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     respond_to do |format|
       format.html { redirect_to(@user) }  
-      format.js { render :nothing => true }
+      format.js
     end
   end
   
