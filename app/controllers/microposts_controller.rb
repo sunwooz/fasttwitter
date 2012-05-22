@@ -43,8 +43,9 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find(params[:user_id])
     @micropost.destroy
     respond_to do |format|
-      format.html { redirect_to(@user) }  
+      format.html { redirect_to(@user) }
       format.js
     end
   end
+  
 end

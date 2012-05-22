@@ -4,8 +4,10 @@
 	<p id="microcontent">
 		<%= micropost.content %>
 	</p>
+	<% if current_user == @user %>
 	<p>
 		<%= link_to 'Delete', user_micropost_path(micropost), :method => :delete, :remote => true, :class => 'delete_micropost btn large' %>
 	</p>
+	<% end %>
 	<hr/>
 <% end %>
