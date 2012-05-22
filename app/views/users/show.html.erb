@@ -7,6 +7,8 @@
 	<em>Maximum length is 250 characters</em>
 <% end %>
 <% end %>
+<% unless @user.microposts.empty? %>
 <div id="microposts">
 <%= render @user.microposts.reverse %>
 </div>
+<% end %>
