@@ -21,6 +21,6 @@
 		<%= @user.microposts.count %> Microposts
 	</h3><hr/>
 	<h3>
-		Joined on <%= @user.created_at %>
+		Joined <%= time_ago_in_words(@user.created_at) %> ago
 	</h3>
 </div>
