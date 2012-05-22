@@ -5,6 +5,6 @@
 		<%= micropost.content %>
 	</p>
 	<p>
-		<%= link_to 'delete', user_micropost_path(micropost), :method => :delete, :remote => true, :class => 'delete_micropost' %>
+		<%= link_to 'Delete', user_micropost_path(micropost), :method => :delete, :remote => true, :class => 'delete_micropost btn large' %>
 	<hr/>
 <% end %>
