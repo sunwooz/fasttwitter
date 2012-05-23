@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
   respond_to :html, :js
+  
   def new
     @micropost = Micropost.new
     @user = User.find(params[:user_id])

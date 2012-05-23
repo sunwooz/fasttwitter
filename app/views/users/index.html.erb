@@ -1,8 +1,9 @@
 <h1>List of Users</h1>
-
+<div id="#userlist">
 <% @users.each do |u| %>
-	<div id="#userlist">
+	
 	<p><%= link_to u.email, user_path(u) %></p>
 	<p><%= u.microposts.count %> Microposts</p>
-	</div>
+
 <% end %>
+</div>

@@ -4,11 +4,15 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   
   has_many :microposts, :dependent => :destroy
-
+  
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
+  validates :email,
+            :presence => true,
+            :uniqueness => true,
+            :format => { :with => /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/ }
 
   def encrypt_password
     if password.present?

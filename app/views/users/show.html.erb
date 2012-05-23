@@ -1,11 +1,13 @@
 <div id="micropost_container">
 <% if logged_in? %>
-<%= form_for [@user, @micropost], :remote => true do |f| %>
-	<h1>What are you thinking?</h1><br/>
-	<%= f.text_area :content, :class => 'micropostfield' %><br/>
-	<%= f.submit :class => 'btn large create_post'%>
-	<em>Maximum length is 250 characters</em>
-<% end %>
+	<%= form_for [@user, @micropost], :remote => true do |f| %>
+		<h1>What are you thinking?</h1><br/>
+		<%= f.text_area :content, :class => 'micropostfield' %><br/>
+		<%= f.submit :class => 'btn large create_post'%>
+		<em>Maximum length is 250 characters</em>
+	<% end %>
+<% else %>
+	<h2 id="thinkingwhat"><%= @user.email %>'s Status</h2>
 <% end %>
 
 <div id="microposts">
@@ -17,7 +19,7 @@
 <div id="user_info">
 	<h2><%= @user.email %></h2>
 	<hr />
-	<h3 id="micropost_count">
+	<h3 id="micropost_count">		
 		<%= @user.microposts.count %> Microposts
 	</h3><hr/>
 	<h3>
